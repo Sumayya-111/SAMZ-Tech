@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <style>
+        body{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Horizontal Centering */
+            background: #0d0d0d; /* Dark background */
+            color: white; /* Light text */
+            font-family: 'Poppins', sans-serif; /* Consistent font */
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 80px;
+            background: #1f2833;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .logo{
+            color: white;
+            text-decoration: none;
+            font-size: 40px;
+            font-weight: 700;
+        }
+        ul{
+            display: flex;
+            justify-content: end;
+        }
+        ul li{
+            list-style-type: none;
+            margin-right: 60px;
+
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
+            text-align: center; /* Ensure text is centered */
+            min-height: 100vh;
+            margin: 0 auto; 
+        }
+        h1{
+            font-size: 28px;
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .name {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 20px 0 10px;
+        }
+
+        .role {
+            color: #50fa7b;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 1rem;
+            line-height: 1.8;
+            opacity: 0.8;
+        }
+        #projects{
+            display: flex;
+            justify-content: space-around;
+           
+
+        }
+        .project-box{
+            border: 2px solid transparent;
+            background-color: #1f2833;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            border-radius: 40px;
+        }
+        #skills {
+    display: flex;
+    justify-content: center; /* Center the table horizontally */
+    align-items: center; /* Center the content vertically */
+    padding: 2rem 0;
+}
+
+/* Table Styling */
+.skills-table {
+    width: 60%;
+    border-collapse: collapse; /* Remove double borders */
+    background: #1e293b; /* Darker background for the table */
+    border-radius: 12px; /* Rounded corners */
+    overflow: hidden; /* Ensure rounded corners apply */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Soft shadow effect */
+}
+
+/* Table Header */
+.skills-table th {
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem; /* Larger font */
+    color: white; /* White text */
+    background: #293344; /* Blue header background */
+}
+
+/* Table Rows */
+.skills-table td {
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem; /* Font size for content */
+    transition: background 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover Effect on Rows */
+.skills-table tr:hover {
+    background: #4b5563; /* Light hover effect */
+}
+
+/* Alternate Row Background */
+.skills-table tr:nth-child(even) {
+    background: #374151; /* Slightly lighter for alternate rows */
+}
+
+        /* Contact Section Styling */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Contact Heading */
+.contact-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem; /* Space below heading */
+    color: #fff; 
+}
+
+/* Form Styling */
+.contact-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between fields */
+    width: 100%;
+    max-width: 500px; /* Consistent width */
+}
+
+/* Input and Textarea Styling */
+.contact-form input,
+.contact-form textarea {
+    flex: 1; /* Equal sizing for both inputs */
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    outline: none; /* Remove default outline */
+    transition: border 0.3s ease;
+    width: 100%;
+}
+
+/* Focus State */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #1e90ff; /* Highlighted border */
+}
+
+/* Textarea Specific Styling */
+.contact-form textarea {
+    height: 150px; /* Larger height */
+    resize: none; /* Prevent resizing */
+}
+
+/* Button Styling */
+.contact-form button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #1e90ff; /* Blue button */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+/* Hover Effect */
+.contact-form button:hover {
+    background-color: #1565c0; /* Darker blue */
+}
+
+
+    </style>
+
+</head>
+<body>
+    <nav>
+        <a href="#" class="logo">My Portfolio</a>
+        <ul id="nav-links">
+            <li><a>About me</a></li>
+            <li><a>Skills</a></li>
+            <li><a>Projects</a></li>
+            <li><a>Contact</a></li>
+        </ul>
+   </nav>
+   <div class="container">
+    <h1 style="text-align: center; font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;">About me</h1>
+    <img src="picture.jpeg" alt="Profile Picture" class="profile-image">
+    <div class="name">Sumayya Shahid</div>
+    <div class="role">Front-end Developer</div>
+    <p class="description">A passionate front-end developer specializing in creating responsive and user-friendly websites. Dedicated to building innovative solutions and delivering high-quality web experiences.</p>
+</div>
+
+   <h1 style="text-align: center; font-family: 'Poppins', sans-serif;
+   font-size: 3rem;
+   font-weight: 700;">Projects</h1>
+    <section id="projects">
+        <div class="project-box">
+            <h3>To do List</h3>
+            <p>A simple and efficient to-do list app that helps users track their daily tasks. Users can add, edit, and delete tasks with a clean and intuitive interface.</p>
+        </div>
+        <div  class="project-box">
+            <h3>Portfolio Website</h3>
+            <p>A sleek and modern portfolio website showcasing your skills, projects, and contact details. Designed to reflect your personal brand while offering a seamless browsing experience.</p>
+        </div>
+        <div  class="project-box">
+            <h3>E-commerce platform</h3>
+            <p>A fully responsive e-commerce product page showcasing items with images, descriptions, and price details. Users can view product variations and add items to their cart.</p>
+        </div>
+    </section>
+
+    <h1 style="text-align: center; font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;">Skills</h1>
+    <section id="skills">
+        <table class="skills-table">
+            <tr>
+                <th>Skills</th>
+                <th>Proficiency</th>
+            </tr>
+            <tr>
+                <td>HTML/CSS</td>
+                <td>Advance</td>
+
+            </tr>
+            <tr>
+                <td>Figma</td>
+                <td>Intermediate</td>
+
+            </tr>
+            <tr>
+                <td>Wordpress</td>
+                <td>Beginner</td>
+
+            </tr>
+        </table>
+    </section>
+
+    <section class="contact-section">
+        <h2 style="text-align: center;">Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="text" placeholder="Your Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    
+</body>
+</html>
